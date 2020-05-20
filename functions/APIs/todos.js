@@ -23,6 +23,7 @@ exports.getAllTodos = (request, response) => {
     });
 };
 
+// CRUD
 exports.postOneTodo = (request, response) => {
   if (request.body.body.trim() === "") {
     return response.status(400).json({ body: "Must not be empty" });
@@ -51,18 +52,38 @@ exports.postOneTodo = (request, response) => {
 };
 
 exports.deleteTodo = (request, response) => {
-  const document = db.doc(`/todos/${request.param.todoId}`);
+  const document = db.doc(`/todos/${request.params.todoId}`);
 
   document
     .get()
     .then((doc) => {
       if (!doc.exists) {
-        return response.status(400).json({ error: "Todo not found" });
+        return response.status(404).json({ error: "Todo doesnt exist" });
       }
       return document.delete();
     })
     .then(() => {
-      return response.json({ message: "Delete sucessfull" });
+      return response.json({ message: "Delete successfull" });
+    })
+    .catch((err) => {
+      console.error(err);
+      return response.status(500).json({ error: err.code });
+    });
+};
+
+exports.editTodo = (request, response) => {
+  if (request.body.id || request.body.createdAt) {
+    return response
+      .status(403)
+      .json({ error: "You are no allowed to edit this" });
+  }
+
+  let document = db.collection("todos").doc(`${request.params.todoId}`);
+
+  document
+    .update(request.body)
+    .then(() => {
+      return response.json({ message: "Updated successfully" });
     })
     .catch((err) => {
       console.error(err);
