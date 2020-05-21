@@ -26,11 +26,11 @@ exports.getAllTodos = (request, response) => {
 // CRUD
 exports.postOneTodo = (request, response) => {
   if (request.body.body.trim() === "") {
-    return response.status(400).json({ body: "Must not be empty" });
+    response.status(400).json({ body: "Must not be empty" });
   }
 
   if (request.body.title.trim() === "") {
-    return response.status(400).json({ title: "Must not be empty" });
+    response.status(400).json({ title: "Must not be empty" });
   }
 
   const newTodoItem = {
@@ -72,10 +72,8 @@ exports.deleteTodo = (request, response) => {
 };
 
 exports.editTodo = (request, response) => {
-  if (request.body.id || request.body.createdAt) {
-    return response
-      .status(403)
-      .json({ error: "You are no allowed to edit this" });
+  if (request.body.todoId || request.body.createdAt) {
+    response.status(403).json({ message: "You are not allowed to edit this" });
   }
 
   let document = db.collection("todos").doc(`${request.params.todoId}`);
@@ -87,6 +85,8 @@ exports.editTodo = (request, response) => {
     })
     .catch((err) => {
       console.error(err);
-      return response.status(500).json({ error: err.code });
+      return response.status(500).json({
+        error: err.code,
+      });
     });
 };
