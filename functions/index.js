@@ -10,10 +10,15 @@ const {
   editTodo,
 } = require("./APIs/todos");
 
+const { loginUser } = require("./APIs/users");
+
 // CRUD of the todos ////
 app.post("/todo", postOneTodo);
 app.delete("/todo/:todoId", deleteTodo);
 app.put("/todo/:todoId", editTodo);
+
+// User
+app.post("/login", loginUser);
 
 // Get of the APIs
 app.get("/todos", getAllTodos);
