@@ -10,7 +10,7 @@ const {
   editTodo,
 } = require("./APIs/todos");
 
-const { loginUser } = require("./APIs/users");
+const { loginUser, signUpUser } = require("./APIs/users");
 
 // CRUD of the todos ////
 app.post("/todo", postOneTodo);
@@ -19,6 +19,7 @@ app.put("/todo/:todoId", editTodo);
 
 // User
 app.post("/login", loginUser);
+app.post("/signup", signUpUser);
 
 // Get of the APIs
 app.get("/todos", getAllTodos);

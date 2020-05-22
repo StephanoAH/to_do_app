@@ -1,0 +1,114 @@
+[debug] [2020-05-22T01:42:56.874Z] ----------------------------------------------------------------------
+[debug] [2020-05-22T01:42:56.879Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2020-05-22T01:42:56.879Z] CLI Version:   8.2.0
+[debug] [2020-05-22T01:42:56.879Z] Platform:      linux
+[debug] [2020-05-22T01:42:56.880Z] Node Version:  v14.2.0
+[debug] [2020-05-22T01:42:56.926Z] Time:          Thu May 21 2020 21:42:56 GMT-0400 (hora de Venezuela)
+[debug] [2020-05-22T01:42:56.926Z] ----------------------------------------------------------------------
+[debug] [2020-05-22T01:42:56.926Z] 
+[debug] [2020-05-22T01:42:56.996Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-22T01:42:56.997Z] > authorizing via signed-in user
+[debug] [2020-05-22T01:42:56.997Z] [iam] checking project to-do-app-df9e6 for permissions ["firebase.projects.get"]
+[debug] [2020-05-22T01:42:57.025Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/to-do-app-df9e6:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-05-22T01:42:57.838Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 22 May 2020 01:42:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=134","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-22T01:42:57.841Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/to-do-app-df9e6  
+ 
+[debug] [2020-05-22T01:42:58.626Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 22 May 2020 01:42:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from '/home/stephano/Documentos/Programming/React/to_do_app'...
+[info] 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "14"
+[info] ✔  functions: functions emulator started at http://localhost:5000
+[info] i  functions: Watching "/home/stephano/Documentos/Programming/React/to_do_app/functions" for Cloud Functions...
+[debug] [2020-05-22T01:42:58.715Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-22T01:42:58.715Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-22T01:42:58.716Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-22T01:42:58.717Z] [worker-~diagnostic~-35b117e1-a32f-4f23-8c55-526beccef434]: Assigning socketPath: /tmp/fire_emu_5444.sock 
+[debug] [2020-05-22T01:42:58.718Z] [worker-~diagnostic~-35b117e1-a32f-4f23-8c55-526beccef434]: BUSY 
+[debug] [2020-05-22T01:42:59.247Z] [runtime-status] [5444] Functions runtime initialized. {"cwd":"/home/stephano/Documentos/Programming/React/to_do_app/functions","node_version":"14.2.0"} 
+[debug] [2020-05-22T01:42:59.251Z] [runtime-status] [5444] Disabled runtime features: undefined 
+[debug] [2020-05-22T01:42:59.253Z] [runtime-status] [5444] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-admin/lib/index.js"} 
+[debug] [2020-05-22T01:42:59.257Z] [runtime-status] [5444] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-functions/lib/index.js"} 
+[warn] ⚠  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to /home/stephano/Documentos/Programming/React/to_do_app/to-do-app-df9e6-firebase-adminsdk-gfqi3-b1d7cc9881.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2020-05-22T01:42:59.260Z] [runtime-status] [5444] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-22T01:42:59.547Z] [runtime-status] [5444] Checked functions.config() {"config":{}} 
+[debug] [2020-05-22T01:42:59.549Z] [runtime-status] [5444] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-05-22T01:42:59.551Z] [runtime-status] [5444] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-admin/lib/index.js"} 
+[debug] [2020-05-22T01:42:59.552Z] [runtime-status] [5444] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-05-22T01:42:59.553Z] [runtime-status] [5444] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-admin/lib/index.js"}} 
+[debug] [2020-05-22T01:42:59.882Z] [runtime-status] [5444] initializeApp(DEFAULT) {"databaseURL":"https://to-do-app-df9e6.firebaseio.com","storageBucket":"to-do-app-df9e6.appspot.com","projectId":"to-do-app-df9e6"} 
+[warn] ⚠  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[info] ✔  functions[api]: http function initialized (http://localhost:5000/to-do-app-df9e6/us-central1/api).
+[debug] [2020-05-22T01:43:02.105Z] [worker-~diagnostic~-35b117e1-a32f-4f23-8c55-526beccef434]: IDLE 
+[debug] [2020-05-22T01:43:08.902Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-05-22T01:43:08.903Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-05-22T01:43:08.906Z] Accepted request POST /to-do-app-df9e6/us-central1/api/login --> api
+[debug] [2020-05-22T01:43:08.927Z] [worker-pool] addWorker(api) 
+[debug] [2020-05-22T01:43:08.928Z] [worker-pool] Adding worker with key api, total=1 
+[debug] [2020-05-22T01:43:08.928Z] [worker-pool] submitWork(triggerId=api) 
+[debug] [2020-05-22T01:43:08.928Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: Assigning socketPath: /tmp/fire_emu_5464.sock 
+[debug] [2020-05-22T01:43:08.929Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: BUSY 
+[debug] [2020-05-22T01:43:09.913Z] [runtime-status] [5464] Functions runtime initialized. {"cwd":"/home/stephano/Documentos/Programming/React/to_do_app/functions","node_version":"14.2.0"} 
+[debug] [2020-05-22T01:43:09.939Z] [runtime-status] [5464] Disabled runtime features: undefined 
+[debug] [2020-05-22T01:43:09.956Z] [runtime-status] [5464] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-admin/lib/index.js"} 
+[debug] [2020-05-22T01:43:09.956Z] [runtime-status] [5464] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-functions/lib/index.js"} 
+[warn] ⚠  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to /home/stephano/Documentos/Programming/React/to_do_app/to-do-app-df9e6-firebase-adminsdk-gfqi3-b1d7cc9881.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2020-05-22T01:43:09.964Z] [runtime-status] [5464] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-22T01:43:10.060Z] [runtime-status] [5464] Checked functions.config() {"config":{}} 
+[debug] [2020-05-22T01:43:10.062Z] [runtime-status] [5464] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-05-22T01:43:10.064Z] [runtime-status] [5464] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-admin/lib/index.js"} 
+[debug] [2020-05-22T01:43:10.065Z] [runtime-status] [5464] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-05-22T01:43:10.065Z] [runtime-status] [5464] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"/home/stephano/Documentos/Programming/React/to_do_app/functions/node_modules/firebase-admin/lib/index.js"}} 
+[debug] [2020-05-22T01:43:10.341Z] [runtime-status] [5464] initializeApp(DEFAULT) {"databaseURL":"https://to-do-app-df9e6.firebaseio.com","storageBucket":"to-do-app-df9e6.appspot.com","projectId":"to-do-app-df9e6"} 
+[warn] ⚠  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2020-05-22T01:43:11.221Z] [runtime-status] [5464] Trigger "api" has been found, beginning invocation! 
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-05-22T01:43:11.223Z] [runtime-status] [5464] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} 
+[debug] [2020-05-22T01:43:11.227Z] [runtime-status] [5464] Running api in mode HTTPS 
+[debug] [2020-05-22T01:43:11.236Z] [runtime-status] [5464] Attempting to listen to socketPath: /tmp/fire_emu_5464.sock 
+[debug] [2020-05-22T01:43:11.245Z] [functions] Runtime ready! Sending request! 
+[debug] [2020-05-22T01:43:11.345Z] [runtime-status] [5464] Ephemeral server handling POST request 
+[debug] [2020-05-22T01:43:11.385Z] [runtime-status] [5464] Ephemeral server survived. 
+[info] i  functions: Finished "api" in ~4s
+[debug] [2020-05-22T01:43:15.539Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: IDLE 
+[debug] [2020-05-22T01:43:15.540Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-05-22T01:43:41.970Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-05-22T01:43:41.970Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-05-22T01:43:41.970Z] Accepted request POST /to-do-app-df9e6/us-central1/api/signup --> api
+[debug] [2020-05-22T01:43:41.971Z] [worker-pool] submitWork(triggerId=api) 
+[debug] [2020-05-22T01:43:41.971Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: Assigning socketPath: /tmp/fire_emu_5464.sock 
+[debug] [2020-05-22T01:43:41.971Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: BUSY 
+[debug] [2020-05-22T01:43:41.972Z] [runtime-status] [5464] Trigger "api" has been found, beginning invocation! 
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-05-22T01:43:41.973Z] [runtime-status] [5464] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} 
+[debug] [2020-05-22T01:43:41.973Z] [runtime-status] [5464] Running api in mode HTTPS 
+[debug] [2020-05-22T01:43:41.974Z] [runtime-status] [5464] Attempting to listen to socketPath: /tmp/fire_emu_5464.sock 
+[debug] [2020-05-22T01:43:41.975Z] [functions] Runtime ready! Sending request! 
+[info] >  SyntaxError: Unexpected token  {"user":"SyntaxError: Unexpected token "}
+[info] >   in JSON at position 124 {"user":" in JSON at position 124"}
+[info] >      at JSON.parse (<anonymous>) {"user":"    at JSON.parse (<anonymous>)"}
+[info] >      at parse (/usr/lib/node_modules/firebase-tools/node_modules/body-parser/lib/types/json.js:89:19) {"user":"    at parse (/usr/lib/node_modules/firebase-tools/node_modules/body-parser/lib/types/json.js:89:19)"}
+[info] >      at /usr/lib/node_modules/firebase-tools/node_modules/body-parser/lib/read.js:121:18 {"user":"    at /usr/lib/node_modules/firebase-tools/node_modules/body-parser/lib/read.js:121:18"}
+[info] >      at invokeCallback (/usr/lib/node_modules/firebase-tools/node_modules/raw-body/index.js:224:16) {"user":"    at invokeCallback (/usr/lib/node_modules/firebase-tools/node_modules/raw-body/index.js:224:16)"}
+[info] >      at done (/usr/lib/node_modules/firebase-tools/node_modules/raw-body/index.js:213:7) {"user":"    at done (/usr/lib/node_modules/firebase-tools/node_modules/raw-body/index.js:213:7)"}
+[info] >      at IncomingMessage.onEnd (/usr/lib/node_modules/firebase-tools/node_modules/raw-body/index.js:273:7) {"user":"    at IncomingMessage.onEnd (/usr/lib/node_modules/firebase-tools/node_modules/raw-body/index.js:273:7)"}
+[info] >      at IncomingMessage.emit (events.js:315:20) {"user":"    at IncomingMessage.emit (events.js:315:20)"}
+[info] >      at endReadableNT (_stream_readable.js:1225:12) {"user":"    at endReadableNT (_stream_readable.js:1225:12)"}
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:84:21) {"user":"    at processTicksAndRejections (internal/process/task_queues.js:84:21)"}
+[warn] ⚠  functions: Your function timed out after ~60s. To configure this timeout, see
+      https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation.
+[info] >  /usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:619 {"user":"/usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:619"}
+[info] >                  throw new Error("Function timed out."); {"user":"                throw new Error(\"Function timed out.\");"}
+[info] >                  ^ {"user":"                ^"}
+[info] >   {"user":""}
+[info] >  Error: Function timed out. {"user":"Error: Function timed out."}
+[info] >      at Timeout._onTimeout (/usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:619:23) {"user":"    at Timeout._onTimeout (/usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:619:23)"}
+[info] >      at listOnTimeout (internal/timers.js:549:17) {"user":"    at listOnTimeout (internal/timers.js:549:17)"}
+[info] >      at processTimers (internal/timers.js:492:7) {"user":"    at processTimers (internal/timers.js:492:7)"}
+[debug] [2020-05-22T01:44:42.045Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: exited 
+[debug] [2020-05-22T01:44:42.046Z] [worker-api-6a7dfae3-7bcc-4523-84e0-ef08393add8f]: FINISHED 
+[debug] [2020-05-22T01:44:42.046Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] Shutting down...
+[debug] [2020-05-22T01:48:28.454Z] [worker-~diagnostic~-35b117e1-a32f-4f23-8c55-526beccef434]: exited 
+[debug] [2020-05-22T01:48:28.455Z] [worker-~diagnostic~-35b117e1-a32f-4f23-8c55-526beccef434]: FINISHED 
