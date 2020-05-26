@@ -1,6 +1,7 @@
 // Backend imports
 const functions = require("firebase-functions");
 const app = require("express")();
+const auth = require("./util/auth");
 
 // Functions
 const {
@@ -10,7 +11,7 @@ const {
   editTodo,
 } = require("./APIs/todos");
 
-const { loginUser, signUpUser } = require("./APIs/users");
+const { loginUser, signUpUser, uploadProfilePhoto } = require("./APIs/users");
 
 // CRUD of the todos ////
 app.post("/todo", postOneTodo);
@@ -20,6 +21,7 @@ app.put("/todo/:todoId", editTodo);
 // User
 app.post("/login", loginUser);
 app.post("/signup", signUpUser);
+app.post("/user/image", auth, uploadProfilePhoto);
 
 // Get of the APIs
 app.get("/todos", getAllTodos);
