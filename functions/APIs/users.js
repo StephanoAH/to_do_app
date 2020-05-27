@@ -113,7 +113,7 @@ deleteImage = (imageName) => {
     });
 };
 
-exports.uploadProphilePhoto = (request, response) => {
+exports.uploadProfilePhoto = (request, response) => {
   const BusBoy = require("busboy");
   const path = require("path");
   const os = require("os");
@@ -121,9 +121,9 @@ exports.uploadProphilePhoto = (request, response) => {
   const busboy = new BusBoy({ headers: request.headers });
 
   let imageFileName;
-  let imageToBeUpload = {};
+  let imageToBeUploaded = {};
 
-  busboy.on("file", (file, filename, encoding, mimetype) => {
+  busboy.on("file", (fieldname, file, filename, encoding, mimetype) => {
     if (mimetype !== "image/png" && mimetype !== "image/jpeg") {
       response.status(400).json({ error: "Wrong file type submited" });
     }
@@ -131,7 +131,7 @@ exports.uploadProphilePhoto = (request, response) => {
     const imageExtension = filename.split(".")[filename.split(".").length - 1];
     imageFileName = `${request.user.username}.${imageExtension}`;
     const filePath = path.join(os.tmpdir(), imageFileName);
-    imageToBeUpload = { filePath, mimetype };
+    imageToBeUploaded = { filePath, mimetype };
     file.pipe(fs.createWriteStream(filePath));
   });
 
@@ -141,11 +141,11 @@ exports.uploadProphilePhoto = (request, response) => {
     admin
       .storage()
       .bucket()
-      .upload(imageToBeUpload.filePath, {
+      .upload(imageToBeUploaded.filePath, {
         resumable: false,
         metadata: {
           metadata: {
-            contentType: imageToBeUpload.mimetype,
+            contentType: imageToBeUploaded.mimetype,
           },
         },
       })
