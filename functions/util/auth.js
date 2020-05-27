@@ -4,10 +4,10 @@ module.exports = (request, response, next) => {
   let idToken;
 
   if (
-    request.header.authorization &&
-    request.header.authorization.startWith("Bearer ")
+    request.headers.authorization &&
+    request.headers.authorization.startsWith("Bearer ")
   ) {
-    idToken = request.header.authorization.split("Bearer ")[1];
+    idToken = request.headers.authorization.split("Bearer ")[1];
   } else {
     console.error("No token found");
     response.status(403).json({ error: "You are not authorized" });
@@ -23,6 +23,11 @@ module.exports = (request, response, next) => {
         .where("userId", "==", request.user.uid)
         .limit(1)
         .get();
+    })
+    .then((data) => {
+      request.user.username = data.docs[0].data().username;
+      request.user.imageUrl = data.docs[0].data().imageUrl;
+      return next();
     })
     .catch((err) => {
       console.error("error while verifying token", err);
