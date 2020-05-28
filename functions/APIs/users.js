@@ -163,3 +163,20 @@ exports.uploadProfilePhoto = (request, response) => {
   });
   busboy.end(request.rawBody);
 };
+
+exports.getUserDetail = (request, response) => {
+  let userData = {};
+  db.doc(`/users/${request.user.username}`)
+    .get()
+    .then((doc) => {
+      // eslint-disable-next-line promise/always-return
+      if (doc.exists) {
+        userData.userCredentials = doc.data();
+        response.json(userData);
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      return response.status(500).json({ errorr: error.code });
+    });
+};
