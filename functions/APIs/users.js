@@ -180,3 +180,17 @@ exports.getUserDetail = (request, response) => {
       return response.status(500).json({ errorr: error.code });
     });
 };
+
+exports.updateUserDetails = (request, response) => {
+  let document = db.collection("users").doc(`${request.user.username}`);
+
+  document
+    .update(request.body)
+    .then(() => {
+      return response.json({ message: "Updated successfully" });
+    })
+    .catch((error) => {
+      console.error(error);
+      return response.status(500).json({ message: "Can't update the value" });
+    });
+};
