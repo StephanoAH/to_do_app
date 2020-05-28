@@ -16,6 +16,7 @@ const {
   signUpUser,
   uploadProfilePhoto,
   getUserDetail,
+  updateUserDetails,
 } = require("./APIs/users");
 
 // CRUD of the todos ////
@@ -28,6 +29,7 @@ app.post("/login", loginUser);
 app.post("/signup", signUpUser);
 app.post("/user/image", auth, uploadProfilePhoto);
 app.get("/user", auth, getUserDetail);
+app.post("/user", auth, updateUserDetails);
 
 // Get of the APIs
 app.get("/todos", getAllTodos);
