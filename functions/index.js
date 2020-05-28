@@ -11,7 +11,12 @@ const {
   editTodo,
 } = require("./APIs/todos");
 
-const { loginUser, signUpUser, uploadProfilePhoto } = require("./APIs/users");
+const {
+  loginUser,
+  signUpUser,
+  uploadProfilePhoto,
+  getUserDetail,
+} = require("./APIs/users");
 
 // CRUD of the todos ////
 app.post("/todo", postOneTodo);
@@ -22,6 +27,7 @@ app.put("/todo/:todoId", editTodo);
 app.post("/login", loginUser);
 app.post("/signup", signUpUser);
 app.post("/user/image", auth, uploadProfilePhoto);
+app.get("/user", auth, getUserDetail);
 
 // Get of the APIs
 app.get("/todos", getAllTodos);
