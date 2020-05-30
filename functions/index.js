@@ -19,10 +19,11 @@ const {
   updateUserDetails,
 } = require("./APIs/users");
 
-// CRUD of the todos ////
-app.post("/todo", postOneTodo);
-app.delete("/todo/:todoId", deleteTodo);
-app.put("/todo/:todoId", editTodo);
+// to-do
+app.get("/todos", auth, getAllTodos);
+app.post("/todo", auth, postOneTodo);
+app.delete("/todo/:todoId", auth, deleteTodo);
+app.put("/todo/:todoId", auth, editTodo);
 
 // User
 app.post("/login", loginUser);
@@ -31,6 +32,4 @@ app.post("/user/image", auth, uploadProfilePhoto);
 app.get("/user", auth, getUserDetail);
 app.post("/user", auth, updateUserDetails);
 
-// Get of the APIs
-app.get("/todos", getAllTodos);
 exports.api = functions.https.onRequest(app);
